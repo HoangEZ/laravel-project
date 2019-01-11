@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,12 +10,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('entry/{id}', function () {
-    return view('entry');
-});
+Route::get('/','IndexController@index');
+Route::get('entry/{id}','EntryController@entry');
 Route::get('about', function() {
     return view('about');
 });
@@ -29,3 +24,10 @@ Route::get('blog-detail',function(){
 Route::get('contact', function() {
     return view('contact');
 });
+Route::get('admin/','IndexController@adminIndex')->middleware('checklogin');
+Route::get('admin/login','LoginController@login');
+Route::post('admin/login-process','LoginController@verify');
+Route::get('crop', function() {
+    return view('crop');
+});
+Route::post('add-comment','CommentController@add');

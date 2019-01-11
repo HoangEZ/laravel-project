@@ -7,23 +7,21 @@
 
          <div class="wow fadeInUp col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4" data-wow-delay="2.3s">
          <div class="project-info">
-            <h4>Client</h4>
-            <p>Ananda Co.</hp>
+            <h4>Tác giả</h4>
+            <p>{{$data->tg}}</hp>
          </div>
          <div class="project-info">
             <h4>Date</h4>
-            <hp>12 June 2016</p>
+            <p>{{$data->date}}</hp>
          </div>
          <div class="project-info">
             <h4>Category</h4>
-            <p>Branding</p>
+            <p>@foreach($category as $cat) {{$cat->genre}} @if(!$loop->last) {{', '}} @endif @endforeach</p>
          </div>
       </div>
 
       <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="2.6s">
-         <p>Ut urna turpis, tempor sit amet massa vitae, pulvinar porttitor magna. Pellentesque dolor lorem, blandit ac congue non, mattis a mi. Vestibulum id accumsan neque. Aenean turpis dui, consectetur in ornare quis, sollicitudin vel mauris. Aliquam eros elit, blandit et tortor non, ornare tincidunt ante.</p>
-         <p>Sed quis quam ullamcorper, tincidunt eros vel, malesuada purus. Mauris risus erat, faucibus in aliquam ut, posuere posuere metus. Phasellus eget sem tempus, egestas nisl dapibus, aliquet elit.</p>
-         <img src="{{url('/public/images/portfolio-img1.jpg')}}" class="img-responsive" alt="Single Project">
+         {{$data->content}}
       </div>
 
       </div>

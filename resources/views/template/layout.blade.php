@@ -142,11 +142,11 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Javascript 
 ================================================== -->
+@section('script')
 <script src="{{url('/public/js/jquery.js')}}"></script>
 <script src="{{url('/public/js/bootstrap.min.js')}}"></script>
 <script src="{{url('/public/js/wow.min.js')}}"></script>
 <script src="{{url('/public/js/custom.js')}}"></script>
-@section('appendjs')
 @show
 </body>
 </html>

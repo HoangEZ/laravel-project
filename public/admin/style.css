@@ -1,0 +1,29 @@
+.top-menu{
+	background-color: #007bff;
+	padding: 5px 0;
+}
+.top-menu a, .infor a{
+	color: #fff;
+}
+.top-menu a.disabled{
+	color:#a9d2ff;
+}
+.top-menu li:not(.right):hover{
+	background-color: #dc3545;
+}
+.header{
+	position: relative;
+}
+.infor{
+	padding-top: 7px;
+	position: absolute;
+	color: #fff;
+	top: 0;
+	right: 15px;
+}
+form.login{
+	position: absolute;
+}
+.top-menu .btn{
+	color: #ff0;
+}

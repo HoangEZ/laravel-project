@@ -1,12 +1,23 @@
 version: '3'
 services:
+  git:
+    build:
+      context: .
+      dockerfile: gitdocker
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/git
+    environment:
+      - USER=HoangEZ
+      - EMAIL=nguyenquochoang234@gmail.com
   web:
     build: 
       context: .
     volumes:
       - .:/var/www/html
     ports:
-      - 80:80
+      - 8888:80
     depends_on:
       - 'db'
     networks:
