@@ -1,16 +1,5 @@
 version: '3'
 services:
-  git:
-    build:
-      context: .
-      dockerfile: gitdocker
-    tty: true
-    stdin_open: true
-    volumes:
-      - .:/git
-    environment:
-      - USER=HoangEZ
-      - EMAIL=nguyenquochoang234@gmail.com
   web:
     build: 
       context: .
