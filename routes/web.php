@@ -34,6 +34,7 @@ Route::post('admin/accept_comment','CommentController@accept')->middleware('chec
 Route::post('admin/reject_comment','CommentController@reject')->middleware('checklogin');
 Route::get('admin/entry_manage','EntryController@manage')->middleware('checklogin');
 Route::get('admin/comment/{id}','CommentController@display')->middleware('checklogin');
+Route::get('admin/entry_add','EntryController@add')->middleware('checklogin');
 Route::get('admin/login','LoginController@login');
 Route::post('admin/login-process','LoginController@verify');
 Route::get('crop', function() {

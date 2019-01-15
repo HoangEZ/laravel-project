@@ -2,7 +2,7 @@
 @section('title','Quản lý bài viết')
 @section('content')
 <div class="content mx-3">
-	<a href="#" class="btn btn-primary mt-3"><span class="fa fa-plus"></span> Thêm</a>
+	<a href="/admin/entry_add" class="btn btn-primary mt-3"><span class="fa fa-plus"></span> Thêm</a>
 	<a href="#" class="btn btn-danger mt-3"><span class="fa fa-trash"></span> Xóa chọn</a>
 	<a href="#" class="btn btn-danger mt-3"><span class="fa fa-trash"></span> Xóa hết</a>
 	<table class="table table-striped mt-3">

@@ -19,6 +19,9 @@ class CheckLoginMiddleware
         if(!$request->session()->exists('id')){
             return redirect('admin/login');
         }
+        $user_id = $request->session()->get('id');
+        $data = LoginModel::select('id','name','email')->where('id',$user_id)->first();
+        $request->attributes->add(['username'=>$data->name]);
         return $next($request);
     }
 }

@@ -22,7 +22,11 @@ class EntryController extends Controller
     	return view('blog-detail',['data'=>$data,'comment'=>$comment]);
     }
     public function manage(Request $request){
-    	$data = $this->select(null,$request);
-    	return view('admin.entry_manage',['data'=>$data]);
-    }
+		$data = $this->select(null,$request);
+		$user = $request->attributes->get('username');
+    	return view('admin.entry_manage',['data'=>$data,'user'=>$user]);
+	}
+	public function add(Request $request){
+		
+	}
 }
