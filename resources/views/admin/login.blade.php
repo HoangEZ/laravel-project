@@ -1,6 +1,6 @@
 @extends('admin.template.layout')
 @section('title','Đăng nhập')
-@section('infor')
+@section('bar')
 @endsection
 @section('content')
 	<div class="row">
@@ -22,13 +22,14 @@
 				</div>
 			</div>
 			@csrf
-			<button type="submit" name="subm" class="btn btn-primary">Đăng nhập</button>
+			<button type="submit" name="subm" class="btn btn-primary" disabled>Đăng nhập</button>
+			<a href="/admin/register" class="btn btn-success">Đăng ký</a>
 		</form>
 	</div>
 @endsection
 
 @section('script')
 	@parent
-	<script src="{{url('public/admin/js/align.js')}}"></script>
+	<script src="{{url('public/admin/js/login_align.js')}}"></script>
 	<script src="{{url('public/admin/js/ajax_login.js')}}"></script>
 @endsection

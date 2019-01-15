@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\LoginModel;
 
 class CheckLoginMiddleware
 {
@@ -15,7 +16,7 @@ class CheckLoginMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!$request->session()->exists('user')){
+        if(!$request->session()->exists('id')){
             return redirect('admin/login');
         }
         return $next($request);

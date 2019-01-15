@@ -62,7 +62,7 @@ class CommentController extends Controller
     }
     public function add(Request $request){
         if(!($this->reCapcha('6Lf2mocUAAAAAELvDI95xnemQfCULg5CH3y9TUR3',$request->input('token'))->success)){
-            return 004;
+            return 004;//website duoc bao ve boi capcha
         }
         if($img_id=$this->crop($request->input('avatar'),$request->input('top'),$request->input('left'),$request->input('size'))){
         	$validator = Validator::make($request->all(),[
@@ -90,5 +90,18 @@ class CommentController extends Controller
     	}else{
             return 001;//dinh dang khong ho tro
         };
+    }
+    public function display($id){
+        $comment =CommentModel::selectRaw('comment.id, url, email, name, comment, date_format(comment.created_at,\'%d %M %Y, %W\') as date,pending')->join('image','image.id','=','comment.image_id')->where('entry_id',$id)->get();
+        return view('admin.comment',['data'=>$comment]);
+    }
+    private function pending_update($request,$param){
+        return CommentModel::where('id',$request->input('id'))->update(['pending'=>$param]);
+    }
+    public function accept(Request $request){
+        return $this->pending_update($request,0);
+    }
+    public function reject(Request $request){
+        return $this->pending_update($request,1);
     }
 }

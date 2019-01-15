@@ -4,11 +4,17 @@ window.addEventListener('load',function(){
 	xhr.addEventListener('readystatechange',function(){
 		if(this.readyState==4){
 			if(this.status==200){
-				if(this.responseText==1) history.back(1);
-				return;
+				if(this.responseText==1) {
+					alert('Đăng nhập thành công');
+					location.href='/admin/';
+					return;
+				}else{
+					alert('Đăng nhập thất bại');
+					form.subm.disabled=false;
+				}
+				
 			}
 		}
-		form.subm.disabled=false;
 	});
 	form.addEventListener('submit',function(e){
 		e.preventDefault();

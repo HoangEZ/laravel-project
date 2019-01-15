@@ -1,6 +1,12 @@
+.container-fluid{
+	padding: 0;
+}
 .top-menu{
 	background-color: #007bff;
-	padding: 5px 0;
+	padding: 0;
+}
+.top-menu li{
+	padding: 10px 0;
 }
 .top-menu a, .infor a{
 	color: #fff;
@@ -9,21 +15,52 @@
 	color:#a9d2ff;
 }
 .top-menu li:not(.right):hover{
-	background-color: #dc3545;
+	background-color: #125fa1;
 }
 .header{
 	position: relative;
 }
-.infor{
+div.infor{
 	padding-top: 7px;
 	position: absolute;
 	color: #fff;
-	top: 0;
+	top: 5px;
 	right: 15px;
+}
+div.infor .btn{
+	background-color: #1fd8c4;
+}
+div.infor .btn:hover{
+	background-color: #1fd8a4;
 }
 form.login{
 	position: absolute;
 }
 .top-menu .btn{
 	color: #ff0;
+}
+.user-infor{
+	padding:5px;
+	margin: 0 auto;
+}
+.list{
+	list-style: none;
+}
+.list .row{
+	margin: 0;
+}
+span.edit{
+	display: inline-block;
+	margin-left: 10px;
+}
+span.edit:hover:before{
+	color: #f87979;
+	cursor: pointer;
+}
+@media screen and (max-width:991px){
+	div.infor{
+		font-size: 15px;
+		top: 0;
+		padding: 0;
+	}
 }

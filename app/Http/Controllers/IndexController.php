@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\GenreModel;
 use App\EntryModel;
 use App\BelongModel;
+use App\LoginModel;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -21,7 +22,10 @@ class IndexController extends Controller
     	return view('index',['genre'=>$genre,'entry'=>$entry]);
     }
     public function adminIndex(Request $request){
-        $user = $request->session()->get('user');
-        return view('admin.index',['user'=>$user]);
+        if($request->session()->exists('id')){
+            $user_id = $request->session()->get('id');
+            $data = LoginModel::select('id','name','email')->where('id',$user_id)->first();
+            return view('admin.index',['user'=>$data->name,'email'=>$data->email,'id' =>$data->id]);
+        }
     }
 }
