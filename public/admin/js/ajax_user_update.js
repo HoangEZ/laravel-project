@@ -15,6 +15,7 @@ window.addEventListener('load',function(){
 	var name = document.getElementById('txt-name');
 	var email = document.getElementById('txt-email');
 	var pass_form = document.getElementById('pass-form');
+	var infor = document.getElementById('infor-name');
 	var xhr = new XMLHttpRequest();
 	var data = 'Lỗi máy chủ';
 	xhr.addEventListener('readystatechange',function(){
@@ -23,8 +24,8 @@ window.addEventListener('load',function(){
 			if(this.status==200){
 				data = this.responseText;
 				if(data=='name_success'){
-					name.innerHTML=name_form.name.value;
-					name_form.submit.disabled=false;
+					infor.innerHTML = name.innerHTML=name_form.name.value;
+					name_form.submit.disabled=false;					
 				}else if(data=='email_success'){
 					email.innerHTML=email_form.email.value;
 					email_form.submit.disabled=false;

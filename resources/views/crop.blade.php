@@ -1,3 +1,7 @@
+<?php
+	$width = 80;
+	$height = (!empty($_GET['r'])) ? $_GET['r']*$width : 80;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +17,8 @@
 		}
 		#rect{
 			position: absolute;
-			width:80px;
-			height:80px;
+			width:<?=$width?>px;
+			height:<?=$height?>px;
 			box-shadow: 0 0 0 5px rgba(255,255,255,0.4) inset;
 			-moz-box-shadow: 0 0 0 5px rgba(255,255,255,0.4) inset;
 			-o-box-shadow: 0 0 0 5px rgba(255,255,255,0.4) inset;

@@ -30,7 +30,7 @@
 			</div>
 			@if(!empty($user))
 			<div class="infor">
-				<span>Xin chào, <a href="#">{{$user}}</a> <a href="{{url('admin/logout')}}" class="btn">Đăng xuất</a></span>
+				<span>Xin chào, <a id="infor-name" href="#">{{$user}}</a> <a href="{{url('admin/logout')}}" class="btn">Đăng xuất</a></span>
 			</div>
 			@endif
 			@show

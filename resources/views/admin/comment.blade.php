@@ -13,6 +13,7 @@
 				<th>Ảnh</th>
 				<th>Nội dung</th>
 				<th></th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -34,6 +35,7 @@
 						{!!'<button class="btn btn-success reject" data-id="'.$data_item->id.'" href="#">Bỏ duyệt</button>'!!}
 					@endif
 				</td>
+				<td><span class="fa fa-times text-danger btn-del"></span></td>
 			</tr>
 			@endforeach
 		</tbody>

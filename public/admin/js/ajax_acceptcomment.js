@@ -3,9 +3,13 @@ window.addEventListener('load',function(){
 	for(var i=0;i<btn.length;i++){
 		btn[i].disabled = false;
 		btn[i].addEventListener('click',function(e){
-			click(e,this);
+			update_click(e,this);
 		});
 	}
+	var btn_del = document.getElementsByClassName('btn-del');
+	console.log();
+	
+
 	var send = function(url,param,callback){
 		var token = document.getElementById('token').innerText;
 		var xhr = new XMLHttpRequest();
@@ -18,7 +22,7 @@ window.addEventListener('load',function(){
 		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
 		xhr.send(param+'&_token='+token);
 	}
-	var click = function(e,element){
+	var update_click = function(e,element){
 		e.preventDefault();
 		element.innerText='Đang xử lý';
 		if(element.classList.contains('accept')){

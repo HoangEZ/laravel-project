@@ -27,6 +27,7 @@ class EntryController extends Controller
     	return view('admin.entry_manage',['data'=>$data,'user'=>$user]);
 	}
 	public function add(Request $request){
-		
+		$user = $request->attributes->get('username');
+		return view('admin.entry_form',['user'=>$user]);
 	}
 }

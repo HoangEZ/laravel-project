@@ -23,7 +23,8 @@ class IndexController extends Controller
     }
     public function adminIndex(Request $request){
         if($request->session()->exists('id')){
-            $data = $request->attributes->get('username');
+			$user_id = $request->session()->get('id');
+            $data = LoginModel::select('id','name','email')->where('id',$user_id)->first();
             return view('admin.index',['user'=>$data->name,'email'=>$data->email,'id' =>$data->id]);
         }
     }

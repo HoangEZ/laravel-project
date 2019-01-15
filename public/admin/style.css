@@ -64,3 +64,6 @@ span.edit:hover:before{
 		padding: 0;
 	}
 }
+.btn-del:hover{
+	cursor: pointer;
+}
