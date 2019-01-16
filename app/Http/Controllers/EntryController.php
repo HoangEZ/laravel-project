@@ -28,6 +28,6 @@ class EntryController extends Controller
 	}
 	public function add(Request $request){
 		$user = $request->attributes->get('username');
-		return view('admin.entry_form',['user'=>$user]);
+		return view('admin.entry_form',['user'=>$user,'task'=>'add']);
 	}
 }

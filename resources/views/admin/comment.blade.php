@@ -44,5 +44,6 @@
 @endsection
 @section('script')
 @parent
+<script src="{{url('public/admin/js/ajax_functions.js')}}"></script>
 <script src="{{url('public/admin/js/ajax_acceptcomment.js')}}"></script>
 @endsection
