@@ -7,7 +7,11 @@ window.addEventListener('load',function(){
 		});
 	}
 	var btn_del = document.getElementsByClassName('btn-del');
-	console.log();
+	for(var i=0;i<btn_del.length;i++){
+		btn_del[i].addEventListener('click',function(e){
+			delete_click(e,this);
+		});
+	}
 	
 
 	var send = function(url,param,callback){
@@ -21,6 +25,19 @@ window.addEventListener('load',function(){
 		xhr.open('POST',url);
 		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
 		xhr.send(param+'&_token='+token);
+	}
+	var delete_click = function(e,element){
+		e.preventDefault();
+		element.classList.remove('text-danger');
+		element.classList.add('test-disabled');
+		send('/admin/delete_comment','id='+element.dataset.id,function(data){
+			if(data=='success'){
+				element.parentElement.parentElement.parentElement.removeChild(element.parentElement.parentElement);
+			}else{
+				element.classList.add('text-danger');
+				element.classList.remove('test-disabled');
+			}
+		});
 	}
 	var update_click = function(e,element){
 		e.preventDefault();

@@ -104,4 +104,12 @@ class CommentController extends Controller
     public function reject(Request $request){
         return $this->pending_update($request,1);
     }
+    public function delete(Request $request)
+    {
+        if(CommentModel::where('id',$request->input('id'))->delete()){
+            return 'success';
+        }else{
+            return 'fail';
+        }
+    }
 }

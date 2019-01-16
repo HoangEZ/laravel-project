@@ -3,7 +3,7 @@
 @section('content')
 <div class="content mx-3">
 	<span id="token" class="d-none">{{csrf_token()}}</span>
-	<table class="table table-stripped mt-3">
+	<table class="table table-stripped mt-3" id="comment-table">
 		<thead class="thead-dark">
 			<tr>
 				<th>#</th>
@@ -35,7 +35,7 @@
 						{!!'<button class="btn btn-success reject" data-id="'.$data_item->id.'" href="#">Bỏ duyệt</button>'!!}
 					@endif
 				</td>
-				<td><span class="fa fa-times text-danger btn-del"></span></td>
+				<td><span class="fa fa-times text-danger btn-del" data-id="{{$data_item->id}}"></span></td>
 			</tr>
 			@endforeach
 		</tbody>

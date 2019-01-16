@@ -32,6 +32,7 @@ Route::post('admin/email_update','UpdateUserController@update_email')->middlewar
 Route::post('admin/password_update','UpdateUserController@update_password')->middleware('checklogin');
 Route::post('admin/accept_comment','CommentController@accept')->middleware('checklogin');
 Route::post('admin/reject_comment','CommentController@reject')->middleware('checklogin');
+Route::post('admin/delete_comment','CommentController@delete')->middleware('checklogin');
 Route::get('admin/entry_manage','EntryController@manage')->middleware('checklogin');
 Route::get('admin/comment/{id}','CommentController@display')->middleware('checklogin');
 Route::get('admin/entry_add','EntryController@add')->middleware('checklogin');
