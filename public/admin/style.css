@@ -67,3 +67,27 @@ span.edit:hover:before{
 .btn-del:hover{
 	cursor: pointer;
 }
+.badge-del{
+	cursor: pointer;
+}
+.chkbox{
+	display:none;
+}
+.chklabel{
+	display: block;
+	width:15px;
+	height: 15px;
+	border: 1px solid #666;
+}
+.chklabel:hover{
+	cursor: pointer;
+	border-color: #000000;
+}
+.chkbox:checked + .chklabel{
+	background-color: #000;
+	border-color: #000;
+	box-shadow: inset 1px 1px 0 0.1px #fff,inset -1px -1px 0 0.1px #fff;
+}
+.chkbox:checked + .chklabel:hover{
+	box-shadow: inset 1px 1px 0 1px #fff,inset -1px -1px 0 1px #fff;
+}

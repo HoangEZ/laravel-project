@@ -20,10 +20,13 @@
 				<div class="collapse navbar-collapse" id="menu-bar">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link" href="/admin/entry_manage">Quản lý bài đăng</a>
+							<a class="nav-link" href="/admin/entry_manage/?nc={{rand(0,100)}}">Quản lý bài đăng</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Cập nhật giới thiệu</a>
+							<a class="nav-link" href="/admin/genre_manage/?nc={{rand(0,100)}}">Quản lý thể loại</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/admin/update_about/?nc={{rand(0,100)}}">Cập nhật giới thiệu</a>
 						</li>
 					</ul>
 				</div>

@@ -19,7 +19,7 @@ class CreateBelongTable extends Migration
             $table->unsignedInteger('genre_id');
             $table->timestamps();
             $table->unique(['entry_id','genre_id']);
-            $table->foreign('entry_id')->references('id')->on('entry');
+            $table->foreign('entry_id')->references('id')->on('entry')->onDelete('cascade');
             $table->foreign('genre_id')->references('id')->on('genre');
         });
     }

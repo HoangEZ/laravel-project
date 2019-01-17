@@ -29,7 +29,7 @@
                     <span>Đăng bởi: <a href="#">{{$data->name}}</a></span>
                     <span><i class="fa fa-date"></i> {{$data->date}}</span>
                  </div>
-               {{$data->content}}
+               {!!$data->content!!}
                
                
 

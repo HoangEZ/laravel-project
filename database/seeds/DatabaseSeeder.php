@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GenreTableSeeder::class);
         $this->call(BelongTableSeeder::class);
         $this->call(CommentTableSeeder::class);
-        
+        $this->call(AboutTableSeeder::class);
     }
 }
