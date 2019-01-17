@@ -11,8 +11,15 @@ class AboutController extends Controller
         $data = AboutModel::select('about')->first();
         return view('about',['data'=>$data]);
     }
-    public function update(){
+    public function update(Request $request){
         $data = AboutModel::select('about')->first();
-        return view('admin.about_form',['data'=>$data]);
+        $user = $request->attributes->get('username');
+        return view('admin.about_form',['data'=>$data,'user'=>$user]);
+    }
+    private function eliminate_script($text){
+		return preg_replace(['/<script .*>/','/<\/script>/'],'',$text);
+	}
+    public function update_process(Request $request){
+        AboutModel::select()->update(['about'=>$this->eliminate_script($request->input('about'))]);
     }
 }

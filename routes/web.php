@@ -13,7 +13,8 @@
 Route::get('/','IndexController@index');
 Route::get('entry/{id}','EntryController@entry');
 Route::get('about','AboutController@display');
-Route::get('admin/update_about','AboutController@update');
+Route::get('admin/update_about','AboutController@update')->middleware('checklogin');
+Route::post('admin/update_about','AboutController@update_process')->middleware('checklogin');
 Route::get('contact', function() {
     return view('contact');
 });

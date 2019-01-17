@@ -7,9 +7,10 @@ use App\GenreModel;
 
 class GenreController extends Controller
 {
-    public function manage(){
+    public function manage(Request $request){
         $datas = GenreModel::select('id','genre')->get();
-        return view('admin.genre_manage',['datas'=>$datas]);
+        $user = $request->attributes->get('username');
+        return view('admin.genre_manage',['datas'=>$datas,'user'=>$user]);
     }
     public function delete(Request $request){
         GenreModel::find($request->input('id'))->delete();

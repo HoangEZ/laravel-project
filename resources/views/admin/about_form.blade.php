@@ -18,35 +18,17 @@
     <script src="//cdn.ckeditor.com/4.11.1/full/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('txt-content',{
-            stylesSet:[
-                {
-                    name:'wow image',
-                    element: 'div',
-                    attributes:
-                    {
-                        'class': 'wow fadeInUp col-md-4 col-sm-5',
-                        'data-wow-delay': '0.4s'
-                    }
-                },
-                {
-                    name:'wow content',
-                    element: 'div',
-                    attributes:
-                    {
-                        'class': 'wow fadeInUp col-md-7 col-sm-7',
-                        'data-wow-delay': '0.8s'
-                    }
-                },
-                {
-                    name:'heading 1',
-                    element: 'h1'
-                },
-                {
-                    name:'paragraph',
-                    element: 'p'
-                }
+            contentsCss:[
+                '{{ url('public/css/bootstrap.min.css') }}',
+                '{{ url('public/css/animate.min.css') }}',
+                '{{ url('public/css/font-awesome.min.css')}}',
+                '{{ url('public/css/ionicons.min.css')}}',
+                '{{ url('public/css/style.css')}}',
+                'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300'
             ]
         });
     </script>
     <script src="{{url('public/admin/js/ajax_functions.js')}}"></script>
+    <script src="{{ url('public/admin/js/ajax_functions.js') }}"></script>
+	 <script src="{{ url('public/admin/js/ajax_updateabout.js') }}"></script>
 @endsection
