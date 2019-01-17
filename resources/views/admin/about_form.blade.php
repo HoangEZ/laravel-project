@@ -45,8 +45,7 @@
                     name:'paragraph',
                     element: 'p'
                 }
-            ],
-            contentsCSS:'abc.css'
+            ]
         });
     </script>
     <script src="{{url('public/admin/js/ajax_functions.js')}}"></script>
